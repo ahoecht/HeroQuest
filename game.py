@@ -122,7 +122,10 @@ class MyGame(arcade.Window):
         dont_touch_layer_name = "Don't Touch"
 
         # Map name
-        map_name = f"map2_level_{level}.tmx"
+        if self.level == 2:
+            map_name = f"map2_level_{level}.tmx"
+        else:
+            map_name = f"map.tmx"
 
         # Read in the tiled map
         my_map = arcade.read_tiled_map(map_name, TILE_SCALING)
